@@ -1,7 +1,12 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Purpose of these two fucntions is to cache result of reversing a matrix in R
+## As matrix reverse operations are resource intensive this is one way to obtain faster results
+## Usage:
+## mat<-matrix(c(1,0,0,1),2)
+## cacheSolve(makeCacheMatrix(mat))
+## Using same function next time will result in faster execution as it avoides call to solve function
+## cacheSolve(makeCacheMatrix(mat))
 
-## Write a short comment describing this function
+## makeCacheMatrix function holds results of solve function after one execution
 
 makeCacheMatrix <- function(x = matrix()) {
     inv_x <- NULL
@@ -18,7 +23,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve determines if makeCacheMatrix already have cached results before executing solve function
 
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
